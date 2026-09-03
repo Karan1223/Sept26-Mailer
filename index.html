@@ -1,998 +1,1335 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-..."
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CT-Today e Magazine News letter</title>
-    <link rel="stylesheet" href="./public/style/styler.css" />
-    <style>
-      body {
-        font-family: "Fira Sans", sans-serif;
-        font-weight: 300;
+  <title>CT Today e-Magazine September 2026</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f5f7;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+    }
+
+    img {
+      max-width: 100%;
+      border: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .main-card {
+      width: 600px;
+      max-width: 600px;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      border-left: 5px solid #f36f21;
+      padding-left: 14px;
+      line-height: 24px;
+    }
+
+    .story-card {
+      background: #fafafa;
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .story-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .story-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: bold;
+      color: #111111;
+    }
+
+    .story-content {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 18px;
+      color: #555555;
+      margin-top: 8px;
+    }
+
+    .story-content a {
+      color: #f36f21;
+      font-weight: bold;
+    }
+
+    .orange-tag {
+      display: inline-block;
+      background: #f36f21;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .dark-tag {
+      display: inline-block;
+      background: #111111;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .learn-more {
+      color: #f36f21;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer-link {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    @media only screen and (max-width: 620px) {
+      .main-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
       }
 
-      .main {
-        position: relative;
-        margin: auto;
-        width: 700px;
-        max-zoom: 0;
-        padding: 10px;
-        border: 2px solid slateblue;
-
-        background-color: #f5f5f5;
+      .mobile-padding {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
       }
 
-      .heading-left {
-        float: left; /* Float the left div to the left */
+      .mobile-column {
+        display: block !important;
+        width: 100% !important;
       }
 
-      .header > div {
-        float: right; /* Float the right div to the right */
+      .mobile-space {
+        display: none !important;
       }
 
-      .header {
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        background-color: slateblue;
-        padding: 10px;
-        color: white;
-        font-family: "fira-sans", sans-serif;
-        font-weight: 600;
+      .story-card img {
+        height: auto !important;
       }
 
-      .logo {
-        width: 100%;
-        border-bottom: 10px solid slateblue;
+      .header-text {
+        font-size: 10px !important;
       }
-
-      .two-cols {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .inside-cols {
-        padding: 10px;
-        width: 50%;
-      }
-
-      .title-box {
-        background-color: slateblue;
-        padding: 5px;
-        width: fit-content;
-        color: white;
-        font-family: "Fira Sans", sans-serif;
-        font-weight: 600;
-      }
-
-      .image-div {
-        border-top: 2px solid slateblue;
-      }
-
-      .button {
-        background-color: slateblue;
-        text-align: center;
-        color: white;
-        padding: 10px;
-        border: 2px solid royalblue;
-        border-radius: 5px;
-      }
-
-      .headings {
-        font-weight: bolder;
-        padding: 0.25vw;
-        color: black;
-        font-family: "Fira Sans", sans-serif;
-        padding-left: 0;
-      }
-
-      .content {
-        text-align: justify;
-        font-weight: 400;
-        padding: 0;
-        padding-left: 0;
-        color: black;
-        font-size: 13px;
-        font-family: "Fira Sans", sans-serif;
-      }
-
-      .ad-1 {
-        width: 100%;
-      }
-
-      .one-col {
-        padding: 2vw;
-        width: 100%;
-      }
-
-      .footer {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .icons {
-        height: 20px;
-        text-align: center;
-        width: auto;
-        margin-right: -1px;
-      }
-      .icon_holder a {
-        text-decoration: none;
-      }
-      .icon_holder {
-        padding: 10px;
-        padding-bottom: 0;
-      }
-
-      .footer-left {
-        justify-content: right;
-        padding-left: 80px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="header">
-        <div>CT Today e-Magazine September 2026</div>
-        <div>Construction Technology Today</div>
-        <!-- <div class="heading-left">Construction Technology Today i</div> -->
-      </div>
-
-      <div>
-        <a href="https://www.constructiontechnology.in/" target="_blank">
-          <img
-            class="logo"
-            style="padding-top: 10px; padding-bottom: 10px"
-            src="https://rgmhdatabasediag.blob.core.windows.net/emailideacontainer/kbimage/ctlogo_638288359482318783.jpg"
-          />
-        </a>
-      </div>
-
-      <div class="two-cols">
-        <div class="inside-cols">
-          <div class="title-box">e-Magazine September 2026</div>
-
-          <div class="image-div">
-            <a
-              href="https://www.constructiontechnology.in/pdf_online_view?pdf=8094d9f54612ccf7ba6b5981c9ea5341"
-              target="_blank"
-            >
-              <img
-                style="width: 100%"
-                src="https://www.constructiontechnology.in/upload/current_issue/IMG_20260811_111612_429b21c3.jpg"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="inside-cols">
-          <div class="title-box">Visit Booth</div>
-
-          <div style="height: 100%">
-            <div class="image-div">
-              <a
-                href="https://us3.campaign-archive.com/?e=__test_email__&u=b18be636888db66bc7e921343&id=30facf3fe9"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 450px"
-                  src="./public/image/image4.png"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="two-cols">
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/HYDROGENPOWERED_JCB_HYDROMAX_SETS_406320_MPH_WORLD_LAND_SPEED_RECORDJCB"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image6.png"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/HYDROGENPOWERED_JCB_HYDROMAX_SETS_406320_MPH_WORLD_LAND_SPEED_RECORDJCB"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                HYDROGEN-POWERED JCB HYDROMAX SETS 406.320 MPH WORLD LAND SPEED
-                RECORD-JCB.
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                JCB has set a new world land speed record with its
-                hydrogen-powered JCB Hydromax, reaching an average speed of
-                406.320 mph (653.5 km/h) at the Bonneville Salt Flats. Powered
-                by two production-based JCB hydrogen engines delivering a
-                combined 1,600 bhp, Hydromax comfortably surpassed the previous
-                hydrogen internal-combustion record of 185.5 mph. Driven by Wing
-                Commander Andy Green OBE, who also drove JCB Dieselmax to its
-                350.092 mph diesel record in 2006, the achievement demonstrates
-                the potential of hydrogen combustion technology for
-                high-performance, zero-CO₂ tailpipe-emission applications.
-                <a
-                  href="https://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/HYDROGENPOWERED_JCB_HYDROMAX_SETS_406320_MPH_WORLD_LAND_SPEED_RECORDJCB"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Learn More about this.
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="hhttps://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/_LT_Partners_with_Frances_FAYAT_Road_Equipment_to_Market_BOMAGs_Specialised_Road_Construction_Equipment_in_India_"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image1.png"
-                  target="_blank"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="hhttps://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/_LT_Partners_with_Frances_FAYAT_Road_Equipment_to_Market_BOMAGs_Specialised_Road_Construction_Equipment_in_India_"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                L&T Partners with France's FAYAT Road Equipment to Market
-                BOMAG's Specialised Road Construction Equipment in India.
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                L&T’s Construction & Mining Machinery business has partnered
-                with FAYAT Road Equipment Division (FRED) India to market
-                BOMAG’s specialised road construction equipment in India,
-                including road milling machines, soil stabilisers and cement
-                spreaders. The partnership combines BOMAG’s advanced road
-                construction technology with L&T’s extensive customer network,
-                nationwide service infrastructure and after-sales capabilities.
-                The expanded portfolio will enable L&T to offer a broader range
-                of solutions for road construction, maintenance and
-                infrastructure development, helping customers improve
-                productivity and project efficiency.
-                <a
-                  href="hhttps://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/_LT_Partners_with_Frances_FAYAT_Road_Equipment_to_Market_BOMAGs_Specialised_Road_Construction_Equipment_in_India_"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Discover the Full Story
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="two-cols">
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/machinery_equipments/Crushing_Screening_Washing_MSand/The_New_Economics_of_Aggregate_ProductionMetso_India"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image2.png"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/machinery_equipments/Crushing_Screening_Washing_MSand/The_New_Economics_of_Aggregate_ProductionMetso_India"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                The New Economics of Aggregate Production-Metso India
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                Metso is helping India’s aggregate producers improve
-                productivity and reduce operating costs through advanced
-                crushing, automation and digital technologies. Solutions such as
-                the HP350e™ cone crusher, C117™ jaw crusher, IC™ automation and
-                Metso Metrics help increase capacity, uptime and efficiency
-                while reducing cost per tonne.
-                <a
-                  href="https://www.constructiontechnology.in/machinery_equipments/Crushing_Screening_Washing_MSand/The_New_Economics_of_Aggregate_ProductionMetso_India"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Read the Full Article.
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/machinery_equipments/Tyre/BKT_to_showcase_Advanced_OffHighway_Tyre_Solutions_at_Bauma_ConExpo_India_2026"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image3.jpeg"
-                  target="_blank"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/machinery_equipments/Tyre/BKT_to_showcase_Advanced_OffHighway_Tyre_Solutions_at_Bauma_ConExpo_India_2026"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                BKT to showcase Advanced Off-Highway Tyre Solutions at Bauma
-                ConExpo India 2026.
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                BKT will showcase its latest off-highway tyre solutions for
-                construction, mining and industrial applications at Bauma
-                ConExpo India 2026, from September 15–18 in Greater Noida. The
-                display will feature advanced tyres designed to improve
-                equipment uptime, productivity and performance in demanding
-                operating conditions.
-                <a
-                  href="https://www.constructiontechnology.in/machinery_equipments/Tyre/BKT_to_showcase_Advanced_OffHighway_Tyre_Solutions_at_Bauma_ConExpo_India_2026"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Discover the Full Story
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div>
-        <a href="https://speedcrafts.com/" target="_blank">
-          <img class="ad-1" src="public/image/IME.png" target="_blank" />
-        </a>
-      </div>
-
-      <hr />
-
-      <div class="two-cols">
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/productsdetail/ammann-group-completes-acquisition"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image7.png"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/productsdetail/ammann-group-completes-acquisition"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Mr. Pradeep Kumar Divakaran Nair, Managing Director, Terraform
-                Geotechnical Services Pvt Ltd.
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                Terraform Geotech will showcase advanced geotechnical and
-                infrastructure solutions at Bauma ConExpo India 2026, covering
-                drilling, grouting, tunnelling, mining, dredging and slope
-                stabilization. Its focus is on customized, reliable technologies
-                that improve productivity, safety, equipment performance and
-                sustainability for challenging construction applications.
-                <a
-                  href="https://www.constructiontechnology.in/productsdetail/ammann-group-completes-acquisition"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Learn More about this.
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/Q_Green_Techcon_Ltd_Advancing_Automated_Brick_and_Block_Manufacturing_Technology"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image5.png"
-                  target="_blank"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/Q_Green_Techcon_Ltd_Advancing_Automated_Brick_and_Block_Manufacturing_Technology"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Mr. Nitesh Modi, Managing Director, Q Green Techcon Ltd
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                Q Green Techcon is advancing automated brick, block and precast
-                manufacturing with advanced machinery, wet press technology and
-                turnkey production solutions. Its technologies focus on
-                improving automation, efficiency, product consistency and
-                sustainability, while international technology partnerships
-                strengthen its capabilities for India’s growing
-                construction-material industry.
-                <a
-                  href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/Q_Green_Techcon_Ltd_Advancing_Automated_Brick_and_Block_Manufacturing_Technology"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Discover the Full Story
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="two-cols">
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/interview/Automation__Components__Gears__Motors__Pump__Spares__Bearings__Electrical__Electronics/From_LabourDependent_to_ProcessDriven_Rethinking_WetCast_Paver_Production"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image10.png"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/interview/Automation__Components__Gears__Motors__Pump__Spares__Bearings__Electrical__Electronics/From_LabourDependent_to_ProcessDriven_Rethinking_WetCast_Paver_Production"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Mr. Naren Thakkar, Director, Atlantic Polymers Pvt Ltd
-              </a>
-            </div>
-            <div class="content">
-              <p>
-              Atlantic Polymers explores how wet-cast paver production can become more efficient and less labour-dependent through integrated batching, material control and workflow design. A case study highlights nearly four-fold higher output with fewer workers, while improved aggregate control also reduced cement and pigment consumption.
-                <a
-                  href="https://www.constructiontechnology.in/interview/Automation__Components__Gears__Motors__Pump__Spares__Bearings__Electrical__Electronics/From_LabourDependent_to_ProcessDriven_Rethinking_WetCast_Paver_Production"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Learn More about this.
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/interview/Construction_Chemical_Waterproofing_Material_Paints/25_Years_of_Innovation_in_Industrial_Defence__Aerospace_CoatingsRamcoat_Paints__Coatings_Pvt_Ltd"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image11.png"
-                  target="_blank"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/interview/Construction_Chemical_Waterproofing_Material_Paints/25_Years_of_Innovation_in_Industrial_Defence__Aerospace_CoatingsRamcoat_Paints__Coatings_Pvt_Ltd"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Mr. Nitesh Modi, Managing Director, Q Green Techcon Ltd
-              </a>
-            </div>
-            <div class="content">
-              <p>
-               Ramcoat Paints & Coatings Pvt. Ltd., formerly Ramdev Resins, brings over 25 years of expertise in advanced industrial, defence and aerospace coatings. Its high-performance anti-corrosive, PU, heat-resistant and fire-retardant solutions are designed to protect critical equipment, improve durability and support India’s growing infrastructure and strategic industries. With technologies from DRDO and ISRO, Ramcoat continues to drive indigenous coating innovation.
-                <a
-                  href="https://www.constructiontechnology.in/interview/Construction_Chemical_Waterproofing_Material_Paints/25_Years_of_Innovation_in_Industrial_Defence__Aerospace_CoatingsRamcoat_Paints__Coatings_Pvt_Ltd"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Discover the Full Story
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="two-cols">
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/armix_engineering_the_future_of_concrete__construction_machinery"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image8.png"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/armix_engineering_the_future_of_concrete__construction_machinery"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Mr. Manoj Kumar, Director, Armix Construction Machinery Pvt Ltd.
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                Armix is showcasing its latest concrete and construction
-                machinery at Bauma ConExpo India, including block machines,
-                hydraulic presses, handling systems and planetary mixers. With a
-                focus on advanced technology, quality and affordable solutions,
-                Armix is expanding its presence across India, the Middle East
-                and international markets.
-                <a
-                  href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/armix_engineering_the_future_of_concrete__construction_machinery"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Learn More about this.
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/interview/Crushing_Screening_Washing_MSand/MaEstro_India_Crushing_and_Screening_plant_automation_for_the_Indian_aggregates_market"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image9.png"
-                  target="_blank"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/interview/Crushing_Screening_Washing_MSand/MaEstro_India_Crushing_and_Screening_plant_automation_for_the_Indian_aggregates_market"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Giorgio Manara, Founder & CEO, MA-ESTRO Italy
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                MA-ESTRO is bringing advanced automation solutions for crushing
-                and screening plants to India, helping aggregate producers
-                improve throughput, energy efficiency and uptime. Its systems
-                provide real-time process control and data monitoring, supported
-                by local engineering, installation, training and after-sales
-                service through its Indian operations.
-                <a
-                  href="https://www.constructiontechnology.in/interview/Crushing_Screening_Washing_MSand/MaEstro_India_Crushing_and_Screening_plant_automation_for_the_Indian_aggregates_market"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Discover the Full Story
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="two-cols">
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/interview/Event/Indias_Construction_Industry_Is_Entering_a_New_Era__woc_2027"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image12.png"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/interview/Event/Indias_Construction_Industry_Is_Entering_a_New_Era__woc_2027"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Mr. Rajneesh Khattar, Sr. Group Director, Informa Markets
-              </a>
-            </div>
-            <div class="content">
-              <p>
-               India’s construction industry is entering a new era driven by infrastructure investment, digitalization, AI, sustainability and industrialized construction. World of Concrete India 2027 will bring together concrete, equipment, technology and industry leaders to explore these trends, foster collaboration and deliver meaningful business opportunities across the construction ecosystem.
-                <a
-                  href="https://www.constructiontechnology.in/interview/Event/Indias_Construction_Industry_Is_Entering_a_New_Era__woc_2027"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Learn More about this.
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="inside-cols">
-          <div class="title-box">The Inside Story</div>
-
-          <div style="height: 92%">
-            <div class="image-div">
-              <a
-                href="https://www.constructiontechnology.in/interview/Concrete_Equipment/Conmat_Heavy_Industries_Building_the_Future_with_Smart_Sustainable_Construction_Technologies"
-                target="_blank"
-              >
-                <img
-                  style="width: 100%; height: 250px"
-                  src="./public/image/image13.png"
-                  target="_blank"
-                />
-              </a>
-            </div>
-
-            <div class="headings">
-              <a
-                href="https://www.constructiontechnology.in/interview/Concrete_Equipment/Conmat_Heavy_Industries_Building_the_Future_with_Smart_Sustainable_Construction_Technologies"
-                target="_blank"
-                style="text-decoration: none; color: #003366; font-weight: bold"
-              >
-                Mr Kalpesh Soni Vice President, Sales & Marketing, Conmat Heavy Industries Private Limited
-              </a>
-            </div>
-            <div class="content">
-              <p>
-                Conmat Heavy Industries is driving the next generation of construction equipment through IoT-enabled machinery, automation, electrification and smart asset management. Its solutions, including self-loading mixers, advanced batching plants and electric equipment, focus on improving productivity, uptime, safety and sustainability while delivering smarter, data-driven construction operations.
-                <a
-                  href="https://www.constructiontechnology.in/interview/Concrete_Equipment/Conmat_Heavy_Industries_Building_the_Future_with_Smart_Sustainable_Construction_Technologies"
-                  target="_blank"
-                  style="
-                    text-decoration: none;
-                    text-align: justify;
-                    color: #003366;
-                    font-weight: bold;
-                  "
-                >
-                  Discover the Full Story
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div>
-        <a href="https://www.constructiontechnology.in/contact" target="_blank">
-          <img class="ad-1" src="public/image/noah.png" style="width: 100%" />
-        </a>
-      </div>
-
-      <hr />
-
-      <div style="text-align: center">
-        <h1>
-          <a
-            href="https://www.constructiontechnology.in/enews"
-            target="_blank"
-            style="
-              text-decoration: none;
-              color: black;
-              font-weight: bold;
-              font-family:
-                &quot;Franklin Gothic Medium&quot;, &quot;Arial Narrow&quot;,
-                Arial, sans-serif;
-            "
-          >
-            Subscribe to Newsletter</a
-          >
-        </h1>
-      </div>
-
-      <div style="background-color: slateblue; padding: 25px">
-        <div class="two-cols" style="height: fit-content">
-          <div class="footer-left" style="padding-top: 7px">
-            <div class="footer">
-              <div class="icon_holder">
-                <a
-                  href="https://www.constructiontechnology.in/"
-                  target="_blank"
-                >
-                  <i class="fas fa-home icons" style="color: white"></i>
-                </a>
-              </div>
-              <div class="icon_holder">
-                <a
-                  href="https://www.constructiontechnology.in/contact"
-                  target="_blank"
-                >
-                  <i class="fas fa-phone icons" style="color: white"></i>
-                </a>
-              </div>
-              <div class="icon_holder">
-                <a
-                  href="https://www.constructiontechnology.in/contact"
-                  target="_blank"
-                >
-                  <i class="fas fa-id-card icons" style="color: white"></i>
-                </a>
-              </div>
-              <div class="icon_holder">
-                <a
-                  href="https://www.constructiontechnology.in/upcommingevents"
-                  target="_blank"
-                >
-                  <i class="far fa-calendar-alt icons" style="color: white"></i>
-                </a>
-              </div>
-              <div class="icon_holder">
-                <a
-                  href="https://www.constructiontechnology.in/"
-                  target="_blank"
-                >
-                  <i class="far fa-bookmark icons" style="color: white"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="footer-right" style="padding-right: 55px">
-            <div class="footer" style="margin-right: 10px">
-              <div class="icon_holder">
-                <a
-                  href="https://www.facebook.com/ConstructionTechnology"
-                  target="_blank"
-                >
-                  <img
-                    style="height: 30px"
-                    class="icons"
-                    src="https://rgmhdatabasediag.blob.core.windows.net/emailideacontainer/kbimage/fb_iconremovebgpreview_638290192079457726.png"
-                  />
-                </a>
-              </div>
-              <div class="icon_holder">
-                <a
-                  href="https://twitter.com/i/flow/login?redirect_after_login=%2FConstTechMedia"
-                  target="_blank"
-                >
-                  <img
-                    style="height: 24px; padding-top: 3px"
-                    class="icons"
-                    src="https://rgmhdatabasediag.blob.core.windows.net/emailideacontainer/kbimage/twittericonnew_638290192315203169.png"
-                  />
-                </a>
-              </div>
-              <div class="icon_holder">
-                <a
-                  href="https://www.instagram.com/constructiontechnologytoday/"
-                  target="_blank"
-                >
-                  <img
-                    style="height: 30px"
-                    class="icons"
-                    src="https://rgmhdatabasediag.blob.core.windows.net/emailideacontainer/kbimage/instaiconnew_638290192545407991.png"
-                  />
-                </a>
-              </div>
-              <div class="icon_holder" style="padding-bottom: 5px">
-                <a
-                  href="https://in.linkedin.com/company/constructiontechnologytoday"
-                  target="_blank"
-                >
-                  <img
-                    style="height: 32px"
-                    class="icons"
-                    src="https://rgmhdatabasediag.blob.core.windows.net/emailideacontainer/kbimage/linked_in_logo_638291693129132003.png"
-                  />
-                </a>
-              </div>
-              <div class="icon_holder">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=918511992500"
-                  target="_blank"
-                >
-                  <img
-                    style="height: 22px; padding-top: 4px"
-                    class="icons"
-                    src="https://rgmhdatabasediag.blob.core.windows.net/emailideacontainer/kbimage/whatsappicon_638291693449305505.png"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <br />
-        <hr
-          style="
-            width: 80%;
-            height: 2px;
-            border-color: white;
-            background-color: white;
-          "
-        />
-        <br />
-
-        <div
-          style="
-            text-align: center;
-            color: white;
-            font-size: 11px;
-            font-family: &quot;fira sans&quot;, sans-serif;
-            margin: -10px;
-            font-style: italic;
-            font-weight: 100;
-          "
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- OUTER BACKGROUND -->
+  <table
+    width="100%"
+    cellpadding="0"
+    cellspacing="0"
+    border="0"
+    bgcolor="#f4f5f7"
+  >
+    <tr>
+      <td align="center" style="padding: 30px 10px;">
+
+        <!-- MAIN CARD -->
+        <table
+          class="main-card"
+          width="600"
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+          bgcolor="#ffffff"
         >
-          Construction Technology Today Pvt Ltd. All Rights Reserved
-        </div>
-      </div>
-    </div>
-  </body>
+
+          <!-- HEADER -->
+          <tr>
+            <td
+              style="
+                background:#1f1f1f;
+                padding:14px 22px;
+                color:#ffffff;
+              "
+            >
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td
+                    class="header-text"
+                    style="
+                      font-size:12px;
+                      color:#bbbbbb;
+                      font-family:Arial,Helvetica,sans-serif;
+                    "
+                  >
+                    e-Magazine September 2026
+                  </td>
+
+                  <td
+                    align="right"
+                    class="header-text"
+                    style="
+                      font-size:12px;
+                      color:#bbbbbb;
+                      font-family:Arial,Helvetica,sans-serif;
+                    "
+                  >
+                    Construction Technology Today
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- LOGO -->
+          <tr>
+            <td align="center" style="padding:26px;">
+              <a
+                href="https://www.constructiontechnology.in/"
+                target="_blank"
+              >
+                <img
+                  src="https://www.constructiontechnology.in/nl_images/logo.png"
+                  width="220"
+                  alt="Construction Technology Today"
+                  style="display:block;margin:auto;"
+                />
+              </a>
+            </td>
+          </tr>
+
+
+          <!-- HERO SECTION -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 26px;"
+            >
+
+              <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+
+                  <!-- LEFT HERO -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/pdf_online_view?pdf=8094d9f54612ccf7ba6b5981c9ea5341"
+                      target="_blank"
+                    >
+
+                      <span class="orange-tag">
+                        e-Magazine September 2026
+                      </span>
+
+                      <img
+                        src="https://www.constructiontechnology.in/upload/current_issue/IMG_20260811_111612_429b21c3.jpg"
+                        width="100%"
+                        alt="September 2026 e-Magazine"
+                        style="
+                          width:100%;
+                          border-radius:8px;
+                          border:1px solid #dddddd;
+                          display:block;
+                        "
+                      />
+
+                    </a>
+
+                  </td>
+
+                  <td
+                    class="mobile-space"
+                    width="4%"
+                  >
+                  </td>
+
+                  <!-- RIGHT HERO -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                  >
+
+                    <span class="dark-tag">
+                      Visit Booth
+                    </span>
+
+                    <a
+                      href="https://us3.campaign-archive.com/?e=__test_email__&u=b18be636888db66bc7e921343&id=30facf3fe9"
+                      target="_blank"
+                    >
+                      <img
+                        src="public/image/image4.png"
+                        width="100%"
+                        alt="Visit Booth"
+                        style="
+                          width:100%;
+                          height:350px;
+                          object-fit:contain;
+                          border-radius:8px;
+                          display:block;
+                        "
+                      />
+                    </a>
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+
+          <!-- THE INSIDE STORY TITLE -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 14px;"
+            >
+              <div class="section-title">
+                The Inside Story
+              </div>
+            </td>
+          </tr>
+
+
+          <!-- STORY ROW 1 -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 12px;"
+            >
+
+              <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+
+                  <!-- JCB -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    class="story-card"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/HYDROGENPOWERED_JCB_HYDROMAX_SETS_406320_MPH_WORLD_LAND_SPEED_RECORDJCB"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image6.png"
+                        width="100%"
+                        alt="JCB Hydromax"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        HYDROGEN-POWERED JCB HYDROMAX SETS 406.320 MPH WORLD LAND SPEED RECORD - JCB
+                      </div>
+
+                      <div class="story-content">
+                        JCB has set a new world land speed record with its hydrogen-powered JCB Hydromax, reaching an average speed of 406.320 mph (653.5 km/h) at the Bonneville Salt Flats. Powered by two production-based JCB hydrogen engines delivering a combined 1,600 bhp, the achievement demonstrates the potential of hydrogen combustion technology for high-performance, zero-CO₂ tailpipe-emission applications.
+                        <br /><br />
+                        <span class="learn-more">
+                          Learn More about this.
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                  <td class="mobile-space" width="4%"></td>
+
+                  <!-- L&T -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/machinery_equipments/Earthmoving_Equipment/_LT_Partners_with_Frances_FAYAT_Road_Equipment_to_Market_BOMAGs_Specialised_Road_Construction_Equipment_in_India_"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image1.png"
+                        width="100%"
+                        alt="L&T and BOMAG"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        L&T Partners with France's FAYAT Road Equipment to Market BOMAG's Specialised Road Construction Equipment in India
+                      </div>
+
+                      <div class="story-content">
+                        L&T’s Construction & Mining Machinery business has partnered with FAYAT Road Equipment Division (FRED) India to market BOMAG’s specialised road construction equipment in India. The partnership combines advanced road construction technology with L&T’s extensive customer network, service infrastructure and after-sales capabilities.
+                        <br /><br />
+                        <span class="learn-more">
+                          Discover the Full Story
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+
+          <!-- STORY ROW 2 -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 12px;"
+            >
+
+              <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+
+                  <!-- METSO -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/machinery_equipments/Crushing_Screening_Washing_MSand/The_New_Economics_of_Aggregate_ProductionMetso_India"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image2.png"
+                        width="100%"
+                        alt="Metso"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        The New Economics of Aggregate Production - Metso India
+                      </div>
+
+                      <div class="story-content">
+                        Metso is helping India’s aggregate producers improve productivity and reduce operating costs through advanced crushing, automation and digital technologies. Solutions such as the HP350e™ cone crusher, C117™ jaw crusher, IC™ automation and Metso Metrics help increase capacity, uptime and efficiency.
+                        <br /><br />
+                        <span class="learn-more">
+                          Read the Full Article.
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                  <td class="mobile-space" width="4%"></td>
+
+                  <!-- BKT -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/machinery_equipments/Tyre/BKT_to_showcase_Advanced_OffHighway_Tyre_Solutions_at_Bauma_ConExpo_India_2026"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image3.jpeg"
+                        width="100%"
+                        alt="BKT"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        BKT to Showcase Advanced Off-Highway Tyre Solutions at Bauma ConExpo India 2026
+                      </div>
+
+                      <div class="story-content">
+                        BKT will showcase its latest off-highway tyre solutions for construction, mining and industrial applications at Bauma ConExpo India 2026, from September 15–18 in Greater Noida. The display will feature advanced tyres designed to improve equipment uptime, productivity and performance.
+                        <br /><br />
+                        <span class="learn-more">
+                          Discover the Full Story
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+
+          <!-- ADVERTISEMENT -->
+          <tr>
+            <td
+              class="mobile-padding"
+              align="center"
+              style="padding:14px 26px 26px;"
+            >
+
+              <a
+                href="https://speedcrafts.com/"
+                target="_blank"
+              >
+                <img
+                  src="public/image/IME.png"
+                  width="100%"
+                  alt="Advertisement"
+                  style="
+                    width:100%;
+                    display:block;
+                    border:1px solid #e1e1e1;
+                    border-radius:8px;
+                  "
+                />
+              </a>
+
+            </td>
+          </tr>
+
+
+          <!-- MORE INSIDE STORY -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 14px;"
+            >
+              <div class="section-title">
+                The Inside Story
+              </div>
+            </td>
+          </tr>
+
+
+          <!-- STORY ROW 3 -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 12px;"
+            >
+
+              <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+
+                  <!-- TERRAFORM -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Geosynthetics/Terraform_Geotech_Engineering_Advanced_Solutions_for_Indias_Infrastructure_Future"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image7.png"
+                        width="100%"
+                        alt="Terraform Geotech"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        Mr. Pradeep Kumar Divakaran Nair, Managing Director, Terraform Geotechnical Services Pvt Ltd.
+                      </div>
+
+                      <div class="story-content">
+                        Terraform Geotech will showcase advanced geotechnical and infrastructure solutions at Bauma ConExpo India 2026, covering drilling, grouting, tunnelling, mining, dredging and slope stabilization. Its focus is on customized technologies that improve productivity, safety, equipment performance and sustainability.
+                        <br /><br />
+                        <span class="learn-more">
+                          Learn More about this.
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                  <td class="mobile-space" width="4%"></td>
+
+                  <!-- Q GREEN -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/Q_Green_Techcon_Ltd_Advancing_Automated_Brick_and_Block_Manufacturing_Technology"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image5.png"
+                        width="100%"
+                        alt="Q Green Techcon"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        Mr. Nitesh Modi, Managing Director, Q Green Techcon Ltd
+                      </div>
+
+                      <div class="story-content">
+                        Q Green Techcon is advancing automated brick, block and precast manufacturing with advanced machinery, wet press technology and turnkey production solutions. Its technologies focus on improving automation, efficiency, product consistency and sustainability.
+                        <br /><br />
+                        <span class="learn-more">
+                          Discover the Full Story
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+
+          <!-- STORY ROW 4 -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 12px;"
+            >
+
+              <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+
+                  <!-- ATLANTIC POLYMERS -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Automation__Components__Gears__Motors__Pump__Spares__Bearings__Electrical__Electronics/From_LabourDependent_to_ProcessDriven_Rethinking_WetCast_Paver_Production"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image10.png"
+                        width="100%"
+                        alt="Atlantic Polymers"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        Mr. Naren Thakkar, Director, Atlantic Polymers Pvt Ltd
+                      </div>
+
+                      <div class="story-content">
+                        Atlantic Polymers explores how wet-cast paver production can become more efficient and less labour-dependent through integrated batching, material control and workflow design. A case study highlights nearly four-fold higher output with fewer workers, while improved aggregate control also reduced cement and pigment consumption.
+                        <br /><br />
+                        <span class="learn-more">
+                          Learn More about this.
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                  <td class="mobile-space" width="4%"></td>
+
+                  <!-- RAMCOAT -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Construction_Chemical_Waterproofing_Material_Paints/25_Years_of_Innovation_in_Industrial_Defence__Aerospace_CoatingsRamcoat_Paints__Coatings_Pvt_Ltd"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image11.png"
+                        width="100%"
+                        alt="Ramcoat Paints and Coatings"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        25+ Years of Innovation in Industrial, Defence & Aerospace Coatings - Ramcoat Paints & Coatings Pvt. Ltd.
+                      </div>
+
+                      <div class="story-content">
+                        Ramcoat Paints & Coatings Pvt. Ltd., formerly Ramdev Resins, brings over 25 years of expertise in advanced industrial, defence and aerospace coatings. Its anti-corrosive, PU, heat-resistant and fire-retardant solutions protect critical equipment and support India's infrastructure and strategic industries.
+                        <br /><br />
+                        <span class="learn-more">
+                          Discover the Full Story
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+
+          <!-- STORY ROW 5 -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 12px;"
+            >
+
+              <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+
+                  <!-- ARMIX -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Blocks__Bricks__Precast/armix_engineering_the_future_of_concrete__construction_machinery"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image8.png"
+                        width="100%"
+                        alt="Armix"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        Mr. Manoj Kumar, Director, Armix Construction Machinery Pvt Ltd.
+                      </div>
+
+                      <div class="story-content">
+                        Armix is showcasing its latest concrete and construction machinery at Bauma ConExpo India, including block machines, hydraulic presses, handling systems and planetary mixers. With a focus on advanced technology, quality and affordable solutions, Armix is expanding across India, the Middle East and international markets.
+                        <br /><br />
+                        <span class="learn-more">
+                          Learn More about this.
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                  <td class="mobile-space" width="4%"></td>
+
+                  <!-- MA-ESTRO -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Crushing_Screening_Washing_MSand/MaEstro_India_Crushing_and_Screening_plant_automation_for_the_Indian_aggregates_market"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image9.png"
+                        width="100%"
+                        alt="MA-ESTRO"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        Giorgio Manara, Founder & CEO, MA-ESTRO Italy
+                      </div>
+
+                      <div class="story-content">
+                        MA-ESTRO is bringing advanced automation solutions for crushing and screening plants to India, helping aggregate producers improve throughput, energy efficiency and uptime. Its systems provide real-time process control and data monitoring, supported by local engineering and after-sales service.
+                        <br /><br />
+                        <span class="learn-more">
+                          Discover the Full Story
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+
+          <!-- STORY ROW 6 -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="padding:0 26px 26px;"
+            >
+
+              <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+
+                  <!-- WORLD OF CONCRETE -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Event/Indias_Construction_Industry_Is_Entering_a_New_Era__woc_2027"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image12.png"
+                        width="100%"
+                        alt="World of Concrete India 2027"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        Mr. Rajneesh Khattar, Sr. Group Director, Informa Markets
+                      </div>
+
+                      <div class="story-content">
+                        India’s construction industry is entering a new era driven by infrastructure investment, digitalization, AI, sustainability and industrialized construction. World of Concrete India 2027 will bring together concrete, equipment, technology and industry leaders to explore these trends and foster collaboration.
+                        <br /><br />
+                        <span class="learn-more">
+                          Learn More about this.
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                  <td class="mobile-space" width="4%"></td>
+
+                  <!-- CONMAT -->
+                  <td
+                    class="mobile-column"
+                    width="48%"
+                    valign="top"
+                    style="
+                      background:#fafafa;
+                      border:1px solid #e1e1e1;
+                      border-radius:8px;
+                      padding:12px;
+                    "
+                  >
+
+                    <a
+                      href="https://www.constructiontechnology.in/interview/Concrete_Equipment/Conmat_Heavy_Industries_Building_the_Future_with_Smart_Sustainable_Construction_Technologies"
+                      target="_blank"
+                    >
+
+                      <img
+                        src="public/image/image13.png"
+                        width="100%"
+                        alt="Conmat Heavy Industries"
+                        style="
+                          width:100%;
+                          height:220px;
+                          object-fit:cover;
+                          border-radius:6px;
+                          display:block;
+                          margin-bottom:10px;
+                        "
+                      />
+
+                      <div class="story-title">
+                        Mr. Kalpesh Soni, Vice President, Sales & Marketing, Conmat Heavy Industries Private Limited
+                      </div>
+
+                      <div class="story-content">
+                        Conmat Heavy Industries is driving the next generation of construction equipment through IoT-enabled machinery, automation, electrification and smart asset management. Its self-loading mixers, batching plants and electric equipment focus on productivity, uptime, safety and sustainability.
+                        <br /><br />
+                        <span class="learn-more">
+                          Discover the Full Story
+                        </span>
+                      </div>
+
+                    </a>
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+
+          <!-- SECOND AD -->
+          <tr>
+            <td
+              class="mobile-padding"
+              align="center"
+              style="padding:0 26px 26px;"
+            >
+
+              <a
+                href="https://www.constructiontechnology.in/contact"
+                target="_blank"
+              >
+
+                <img
+                  src="public/image/noah.png"
+                  width="100%"
+                  alt="Advertisement"
+                  style="
+                    width:100%;
+                    display:block;
+                    border:1px solid #e1e1e1;
+                    border-radius:8px;
+                  "
+                />
+
+              </a>
+
+            </td>
+          </tr>
+
+
+          <!-- NEXT ISSUE FOCUS -->
+          <tr>
+            <td
+              class="mobile-padding"
+              style="
+                padding:17px 26px 26px;
+                border-top:2px solid #666666;
+              "
+            >
+
+              <table
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+              >
+                <tr>
+                  <td
+                    style="
+                      background-color:#f7941d;
+                      color:#ffffff;
+                      font-size:9px;
+                      line-height:1;
+                      font-weight:bold;
+                      padding:5px 8px;
+                      white-space:nowrap;
+                    "
+                  >
+                    NEXT ISSUE FOCUS
+                  </td>
+                </tr>
+              </table>
+
+
+              <p
+                style="
+                  margin:10px 0 8px;
+                  padding:0;
+                  font-size:12px;
+                  line-height:1.35;
+                  font-weight:bold;
+                  color:#333333;
+                "
+              >
+                CT Today Magazine – September 2026 Special Issue
+
+                <span style="color:#00a3e0;">
+                  |
+                </span>
+
+                <a
+                  href="https://bcindia.com/en/"
+                  target="_blank"
+                  style="
+                    color:#00a3e0;
+                    text-decoration:none;
+                    font-weight:bold;
+                  "
+                >
+                  bauma CONEXPO INDIA 2026
+                </a>
+              </p>
+
+
+              <p
+                style="
+                  margin:0;
+                  padding:0;
+                  font-size:11px;
+                  line-height:1.45;
+                  color:#333333;
+                "
+              >
+                Feature your brand alongside industry-leading content and reach
+                key decision-makers across the construction and infrastructure
+                sector. Showcase your products, solutions, innovations, and
+                expertise in
+                <strong>
+                  India’s premier construction industry magazine.
+                </strong>
+
+                <span
+                  style="
+                    color:#9f1fac;
+                    font-weight:bold;
+                  "
+                >
+                  Advertise Now • Build Credibility • Generate Business
+                </span>
+
+                and make your brand stand out before, during and after
+
+                <a
+                  href="https://bcindia.com/en/"
+                  target="_blank"
+                  style="
+                    color:#00a3e0;
+                    text-decoration:none;
+                    font-weight:bold;
+                  "
+                >
+                  bauma CONEXPO INDIA 2026
+                </a>.
+
+                Reserve your advertising space today and maximize your
+                industry visibility!
+              </p>
+
+            </td>
+          </tr>
+
+
+          <!-- SUBSCRIBE -->
+          <tr>
+            <td
+              align="center"
+              style="
+                background:#f36f21;
+                padding:32px;
+              "
+            >
+
+              <div
+                style="
+                  color:#ffffff;
+                  font-size:20px;
+                  font-weight:bold;
+                  margin-bottom:12px;
+                  font-family:Arial,Helvetica,sans-serif;
+                "
+              >
+                Stay Ahead of Construction Technology
+              </div>
+
+              <a
+                href="https://www.constructiontechnology.in/subscriptions"
+                target="_blank"
+                style="
+                  background:#ffffff;
+                  color:#f36f21;
+                  padding:14px 34px;
+                  border-radius:30px;
+                  font-weight:bold;
+                  text-decoration:none;
+                  display:inline-block;
+                  font-family:Arial,Helvetica,sans-serif;
+                "
+              >
+                Subscribe Now
+              </a>
+
+            </td>
+          </tr>
+
+
+          <!-- FOOTER -->
+          <tr>
+            <td
+              align="center"
+              style="
+                padding:18px;
+                font-size:12px;
+                color:#777777;
+                font-family:Arial,Helvetica,sans-serif;
+              "
+            >
+
+              © 2026 Construction Technology Today
+              <br />
+
+              <a
+                href="https://www.constructiontechnology.in"
+                target="_blank"
+                class="footer-link"
+              >
+                www.constructiontechnology.in
+              </a>
+
+            </td>
+          </tr>
+
+        </table>
+        <!-- END MAIN CARD -->
+
+      </td>
+    </tr>
+  </table>
+  <!-- END OUTER BACKGROUND -->
+
+</body>
 </html>
+```
